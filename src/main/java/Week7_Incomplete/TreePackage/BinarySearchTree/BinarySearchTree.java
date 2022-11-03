@@ -1,8 +1,8 @@
 package Week7_Incomplete.TreePackage.BinarySearchTree;
 
-import TreePackage.BinaryNode;
-import TreePackage.BinaryTree;
-import TreePackage.BinaryTreeInterface;
+import Week7_Incomplete.TreePackage.BinaryNode;
+import Week7_Incomplete.TreePackage.BinaryTree;
+import Week7_Incomplete.TreePackage.BinaryTreeInterface;
 
 public class BinarySearchTree<T extends Comparable<? super T>>
         extends BinaryTree<T> implements SearchTreeInterface<T>
@@ -69,7 +69,8 @@ public class BinarySearchTree<T extends Comparable<? super T>>
     // Adds anEntry to the nonempty subtree rooted at rootNode.
     private T addEntry(BinaryNode<T> rootNode, T anEntry)
     {
-
+        //TODO
+        return null;
     } // end addEntry
 
     public T remove(T anEntry)
@@ -92,7 +93,8 @@ public class BinarySearchTree<T extends Comparable<? super T>>
     private BinaryNode<T> removeEntry(BinaryNode<T> rootNode, T anEntry,
                                       ReturnObject oldEntry)
     {
-
+        //TODO
+        return null;
     } // end removeEntry
 
     // Removes the entry in a given root node of a subtree.

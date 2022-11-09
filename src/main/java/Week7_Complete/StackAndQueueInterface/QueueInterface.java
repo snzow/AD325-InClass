@@ -1,4 +1,5 @@
-package Week6_7_8_Complete.StackAndQueueInterface;
+package Week7_Complete.StackAndQueueInterface;
+
 /**
    An interface for the ADT queue.   
    @author Frank M. Carrano
@@ -13,12 +14,12 @@ public interface QueueInterface<T>
   
   /** Removes and returns the entry at the front of this queue.
       @return  The object at the front of the queue. 
-      @throws  EmptyQueueException if the queue is empty before the operation. */
+      @throws EmptyQueueException if the queue is empty before the operation. */
   public T dequeue();
   
   /**  Retrieves the entry at the front of this queue.
       @return  The object at the front of the queue.
-      @throws  EmptyQueueException if the queue is empty. */
+      @throws EmptyQueueException if the queue is empty. */
   public T getFront();
   
   /** Detects whether this queue is empty.

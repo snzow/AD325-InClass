@@ -1,4 +1,4 @@
-package Week6_7_8_Complete.StackAndQueueInterface;
+package Week6_Complete.StackAndQueueInterface;
 import java.util.EmptyStackException;
 
 public final class LinkedStack<T> implements StackInterface<T>

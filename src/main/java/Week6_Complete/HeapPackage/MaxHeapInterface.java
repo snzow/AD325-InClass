@@ -1,4 +1,4 @@
-package Week6_7_8_Complete.HeapPackage;
+package Week6_Complete.HeapPackage;
 
 public interface MaxHeapInterface<T extends Comparable<? super T>>
 {

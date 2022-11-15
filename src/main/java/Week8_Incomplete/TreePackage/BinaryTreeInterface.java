@@ -14,4 +14,12 @@ public interface BinaryTreeInterface<T> extends TreeInterface<T>,
      @param rightTree  The right subtree of the new tree. */
     public void setTree(T rootData, BinaryTreeInterface<T> leftTree,
                         BinaryTreeInterface<T> rightTree);
+
+    public int countLeaves();
+
+    public int countLefts();
+
+    public BinaryNode removeLeaves(BinaryNode node);
+
+    public boolean isFull();
 } // end BinaryTreeInterface

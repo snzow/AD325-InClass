@@ -1,6 +1,7 @@
 package Week8_Incomplete.StackAndQueueInterface;
 
-public final class LinkedQueue<T> implements QueueInterface<T>
+public final class
+LinkedQueue<T> implements QueueInterface<T>
 {
    private Node firstNode; // References node at front of queue
    private Node lastNode;  // References node at back of queue

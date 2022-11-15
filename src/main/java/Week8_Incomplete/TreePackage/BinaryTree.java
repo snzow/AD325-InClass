@@ -8,6 +8,7 @@ import Week8_Incomplete.StackAndQueueInterface.StackInterface;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
+import java.util.Stack;
 
 /**
  A class that implements the ADT binary tree.
@@ -97,6 +98,124 @@ public class BinaryTree<T> implements BinaryTreeInterface<T>
         return height;
     } // end getHeight
 
+
+    //Runtime estimate: O(N)
+    public int countLeaves(){
+        BinaryNode node = root;
+        int leaves = 0;
+        Stack<BinaryNode> stack = new Stack<>();
+        if(node != null){
+            stack.push(node);
+        }
+        BinaryNode nextNode;
+        while (!stack.isEmpty()){
+            nextNode = stack.pop();
+
+            BinaryNode rightChild = nextNode.getRightChild();
+            BinaryNode leftChild = nextNode.getLeftChild();
+
+            if (rightChild != null){
+                stack.push(rightChild);
+            }
+            if (leftChild != null){
+                stack.push(leftChild);
+            }
+            if(nextNode.isLeaf()){
+                leaves++;
+            }
+        }
+        return leaves;
+
+
+    }
+
+    //Runtime estimate: O(N)
+    public int countLefts(){
+        BinaryNode node = root;
+        int lefts = 0;
+        Stack<BinaryNode> stack = new Stack<>();
+        if(node != null){
+            stack.push(node);
+        }
+        BinaryNode nextNode;
+        while (!stack.isEmpty()){
+            nextNode = stack.pop();
+
+            BinaryNode rightChild = nextNode.getRightChild();
+            BinaryNode leftChild = nextNode.getLeftChild();
+
+            if (rightChild != null){
+                stack.push(rightChild);
+            }
+            if (leftChild != null){
+                lefts++;
+                stack.push(leftChild);
+            }
+        }
+        return lefts;
+
+
+    }
+
+    public boolean isFull(){
+        BinaryNode node = root;
+        Stack<BinaryNode> stack = new Stack<>();
+        if(node != null){
+            stack.push(node);
+        }
+        BinaryNode nextNode;
+        while (!stack.isEmpty()){
+            nextNode = stack.pop();
+
+            BinaryNode rightChild = nextNode.getRightChild();
+            BinaryNode leftChild = nextNode.getLeftChild();
+
+            if (rightChild != null){
+                stack.push(rightChild);
+            }
+            if (leftChild != null){
+                stack.push(leftChild);
+            }
+            if (!nextNode.isLeaf() && (rightChild == null || leftChild == null)){
+                return false;
+            }
+        }
+        return true;
+
+
+    }
+
+    public BinaryNode removeLeaves(BinaryNode node){
+        if (!(node!= null && !node.isLeaf())){
+            return null;
+        }
+        else{
+            if (node.getLeftChild() != null){
+                if (node.getLeftChild().isLeaf()){
+                    node.setLeftChild(null);
+                }
+                else{
+                    removeLeaves(node.getLeftChild());
+                }
+            }
+            if (node.getRightChild() != null){
+                if (node.getRightChild().isLeaf()){
+                    node.setRightChild(null);
+                }
+                else{
+                    removeLeaves(node.getRightChild());
+                }
+            }
+
+        }
+        return node;
+
+
+    }
+
+    private void removeLeavesRecur(BinaryNode node){
+
+    }
     public int getNumberOfNodes()
     {
         int numberOfNodes = 0;

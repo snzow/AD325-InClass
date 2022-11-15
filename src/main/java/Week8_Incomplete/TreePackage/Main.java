@@ -39,7 +39,7 @@ public class Main {
         createTree7(aTree);
         showTreeStats(aTree, "A", 4, 11);
         testTraversals(aTree, "A B D E F G B D E F G", "D B F E G A D B F E G", "D F G E B D F G E B A", "A B B D E D E F G F G");
-
+        testCustomFunctions(aTree);
         testEmptyTree();
 
         TestSeg2421(); // Test the code in Segment 24.21 of Chapter 24
@@ -209,6 +209,8 @@ public class Main {
         System.out.println("   / \\     ");
         System.out.println("  F   G     ");
         System.out.println();
+
+
     } // end createTree6
 
     public static void createTree7(BinaryTree<String> tree)
@@ -380,4 +382,12 @@ public class Main {
             System.out.print(preorder.next() + " ");
         System.out.println();
     } // end TestSeg2421
+
+    public static void testCustomFunctions(BinaryTree tree){
+        System.out.println("leaves: " + tree.countLeaves());
+        System.out.println("lefts: " + tree.countLefts());
+        System.out.println("isFull: " + tree.isFull());
+
+        System.out.println(tree.removeLeaves(tree.getRootNode()) );
+    }
 }
